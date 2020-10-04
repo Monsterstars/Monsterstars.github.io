@@ -1,0 +1,987 @@
+<!DOCTYPE html>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="zh-CN">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2"/>
+<meta name="theme-color" content="#222">
+<meta name="baidu-site-verification" content="udk71Uwu04" />
+
+
+
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=6.4.1" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=6.4.1">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=6.4.1">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=6.4.1">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=6.4.1" color="#222">
+
+
+
+
+
+
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    version: '6.4.1',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: false,
+    fastclick: false,
+    lazyload: false,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+  
+
+
+
+
+  <meta name="description" content="史上最完整、最详细的教程！在最短的时间内搭建出自己独一无二的专属博客。">
+<meta name="keywords" content="hexo, github page, blog, 个人博客">
+<meta property="og:type" content="article">
+<meta property="og:title" content="史上最完整教程！Hexo + GitHub page免费搭建个人博客">
+<meta property="og:url" content="https://monsterstars.github.io/2019/05/11/hexo-github-build-blog/index.html">
+<meta property="og:site_name" content="Monster博客">
+<meta property="og:description" content="史上最完整、最详细的教程！在最短的时间内搭建出自己独一无二的专属博客。">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="https://monsterstars.github.io/2019/05/11/hexo-github-build-blog/githubpage.jpg">
+<meta property="og:image" content="https://monsterstars.github.io/2019/05/11/hexo-github-build-blog/node.js.jpg">
+<meta property="og:image" content="https://monsterstars.github.io/2019/05/11/hexo-github-build-blog/startserver.jpg">
+<meta property="og:image" content="https://monsterstars.github.io/2019/05/11/hexo-github-build-blog/configSite.jpg">
+<meta property="og:image" content="https://monsterstars.github.io/2019/05/11/hexo-github-build-blog/configURL1.jpg">
+<meta property="og:image" content="https://monsterstars.github.io/2019/05/11/hexo-github-build-blog/configURL2.jpg">
+<meta property="og:image" content="https://monsterstars.github.io/2019/05/11/hexo-github-build-blog/postfolder.jpg">
+<meta property="og:image" content="https://monsterstars.github.io/2019/05/11/hexo-github-build-blog/deploy.jpg">
+<meta property="og:image" content="https://monsterstars.github.io/2019/05/11/hexo-github-build-blog/theme.jpg">
+<meta property="og:image" content="https://monsterstars.github.io/2019/05/11/hexo-github-build-blog/themeconfig.jpg">
+<meta property="og:updated_time" content="2019-06-11T17:14:00.007Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="史上最完整教程！Hexo + GitHub page免费搭建个人博客">
+<meta name="twitter:description" content="史上最完整、最详细的教程！在最短的时间内搭建出自己独一无二的专属博客。">
+<meta name="twitter:image" content="https://monsterstars.github.io/2019/05/11/hexo-github-build-blog/githubpage.jpg">
+
+
+
+
+
+
+  <link rel="canonical" href="https://monsterstars.github.io/2019/05/11/hexo-github-build-blog/"/>
+
+
+
+<script type="text/javascript" id="page.configurations">
+  CONFIG.page = {
+    sidebar: "",
+  };
+</script>
+
+  <title>史上最完整教程！Hexo + GitHub page免费搭建个人博客 | Monster博客</title>
+  
+
+
+
+
+
+
+
+
+
+  <noscript>
+  <style type="text/css">
+    .use-motion .motion-element,
+    .use-motion .brand,
+    .use-motion .menu-item,
+    .sidebar-inner,
+    .use-motion .post-block,
+    .use-motion .pagination,
+    .use-motion .comments,
+    .use-motion .post-header,
+    .use-motion .post-body,
+    .use-motion .collection-title { opacity: initial; }
+
+    .use-motion .logo,
+    .use-motion .site-title,
+    .use-motion .site-subtitle {
+      opacity: initial;
+      top: initial;
+    }
+
+    .use-motion {
+      .logo-line-before i { left: initial; }
+      .logo-line-after i { right: initial; }
+    }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Monster博客</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+    
+  </div>
+
+  <div class="site-nav-toggle">
+    <button aria-label="切换导航栏">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  
+    <ul id="menu" class="menu">
+      
+        
+        
+        
+          
+          <li class="menu-item menu-item-home">
+    <a href="/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-home"></i> <br />首页</a>
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-about">
+    <a href="/about/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-user"></i> <br />关于</a>
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-archives">
+    <a href="/archives/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />归档</a>
+  </li>
+
+      
+      
+    </ul>
+  
+
+  
+    
+
+  
+
+  
+</nav>
+
+
+
+  
+
+
+
+</div>
+    </header>
+
+    
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://monsterstars.github.io/2019/05/11/hexo-github-build-blog/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Monster">
+      <meta itemprop="description" content="Monster个人博客，学习ing...">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Monster博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">史上最完整教程！Hexo + GitHub page免费搭建个人博客
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2019-05-11 00:00:00" itemprop="dateCreated datePublished" datetime="2019-05-11T00:00:00+08:00">2019-05-11</time>
+            
+
+            
+              
+
+              
+                
+                <!-- <span class="post-meta-divider">|</span> -->
+                
+
+                <!-- <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span> -->
+                
+                  <!-- <span class="post-meta-item-text">更新于</span> -->
+                
+                <!-- <time title="修改时间：2019-06-12 01:14:00" itemprop="dateModified" datetime="2019-06-12T01:14:00+08:00"> -->
+                  
+                <!-- </time> -->
+              
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+              <div class="post-description">史上最完整、最详细的教程！在最短的时间内搭建出自己独一无二的专属博客。</div>
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>使用github pages服务搭建博客的好处有：</p>
+<ul>
+<li>全是静态文件，访问速度快；</li>
+<li>免费方便，不用花一分钱就可以搭建一个自由的个人博客，不需要服务器不需要后台；</li>
+<li>可以随意绑定自己的域名，不仔细看的话根本看不出来你的网站是基于github的；</li>
+<li>数据绝对安全，基于github的版本管理，想恢复到哪个历史版本都行；</li>
+<li>博客内容可以轻松打包、转移、发布到其它平台；</li>
+<li>…</li>
+</ul>
+<a id="more"></a>
+<h1 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h1><ul>
+<li>GitHub</li>
+<li>Node.js</li>
+<li>Git-Bash</li>
+<li>Hexo</li>
+<li>学习的激情</li>
+</ul>
+<h2 id="GitHub新建仓库"><a href="#GitHub新建仓库" class="headerlink" title="GitHub新建仓库"></a>GitHub新建仓库</h2><ul>
+<li><p>登陆<a href="https://github.io" target="_blank" rel="noopener">GitHub Page</a><br><img src="/2019/05/11/hexo-github-build-blog/githubpage.jpg" alt="githubpage"></p>
+</li>
+<li><p>新建git仓库</p>
+<ul>
+<li>新建一个名为你的用户名.github.io的仓库，比如说，如果你的github用户名是username，那么你就新建username.github.io的仓库（必须是你的用户名，其它名称无效），将来你的网站访问地址就是 <a href="http://username.github.io" target="_blank" rel="noopener">http://username.github.io</a> 了，是不是很方便？</li>
+<li>由此可见，每一个github账户最多只能创建一个这样可以直接使用域名访问的仓库。</li>
+<li>几个注意的地方：<ul>
+<li>注册的邮箱一定要验证，否则不会成功；</li>
+<li>仓库名字必须是：username.github.io，其中username是你的用户名；</li>
+<li>仓库创建成功不会立即生效，需要过一段时间，大概10-30分钟，或者更久，我的等了半个小时才生效；</li>
+</ul>
+</li>
+<li>创建成功后，默认会在你这个仓库里生成一些示例页面，以后你的网站所有代码都是放在这个仓库里啦。</li>
+</ul>
+</li>
+</ul>
+<h2 id="windows10下Node-js安装"><a href="#windows10下Node-js安装" class="headerlink" title="windows10下Node.js安装"></a>windows10下Node.js安装</h2><ul>
+<li><p>登陆<a href="https://nodejs.org/en/download/" target="_blank" rel="noopener">Node.js官网</a>下载对应版本安装文件</p>
+<p><strong>环境变量检测</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ node --version</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p><img src="/2019/05/11/hexo-github-build-blog/node.js.jpg" alt="node.js version"></p>
+<h2 id="windows10下Git-Bash安装及SSH-Key配置"><a href="#windows10下Git-Bash安装及SSH-Key配置" class="headerlink" title="windows10下Git-Bash安装及SSH Key配置"></a>windows10下Git-Bash安装及SSH Key配置</h2><ul>
+<li>登陆<a href="https://git-scm.com/downloads" target="_blank" rel="noopener">Git官网</a>下载对应版本安装文件</li>
+<li>安装完成后打开文件目录找到Git-Bash.exe并执行</li>
+<li><p>配置Git用户及邮箱（在你的github上显示出来的提交者）</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ git config --global user.name &quot;Your Name&quot;</span><br><span class="line">$ git config --global user.email &quot;email@example.com&quot;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>SSH Key配置</p>
+<ul>
+<li><p><strong>使用SSH Key</strong></p>
+<ul>
+<li>由于本地Git仓库和GitHub仓库之间的传输是通过SSH加密的，所以必须要让github仓库认证你SSH key，在此之前，必须要生成SSH key。</li>
+</ul>
+</li>
+<li><p><strong>配置SSH Key</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ ssh-keygen -t rsa -C &quot;email@example.com&quot;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>密钥类型可以用 -t 选项指定。如果没有指定则默认生成用于SSH-2的RSA密钥。这里使用的是rsa。</li>
+<li>同时在密钥中有一个注释字段，用-C来指定所指定的注释，可以方便用户标识这个密钥，指出密钥的用途或其他有用的信息。所以在这里输入自己的邮箱或者其他都行。</li>
+<li>输入完毕后程序同时要求输入一个密语字符串(passphrase)，空表示没有密语。接着会让输入2次口令(password)，空表示没有口令。3次回车即可完成当前步骤，此时[c盘&gt;用户&gt;自己的用户名&gt;.ssh]目录下已经生成好了。</li>
+</ul>
+</li>
+<li>将公钥上传到Github<ul>
+<li>登录github。打开setting-&gt;SSH keys，点击右上角 New SSH key，把生成好的公钥id_rsa.pub放进 key输入框中，再为当前的key起一个title来区分每个key。</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="Hexo克隆到本地并安装"><a href="#Hexo克隆到本地并安装" class="headerlink" title="Hexo克隆到本地并安装"></a>Hexo克隆到本地并安装</h2><ul>
+<li><p>在自己认为合适的地方新建一个文件夹 并执行Hexo安装</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm install -g hexo-cli</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>检查hexo是否安装成功</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo -v</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>初始化文件夹</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo init</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>安装所需要的组件</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm install</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>生成静态文件</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo g</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>实时预览</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo s</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p><img src="/2019/05/11/hexo-github-build-blog/startserver.jpg" alt="StartServer"></p>
+<ul>
+<li>在浏览器中输入localhost:4000看到页面即为Hexo安装成功</li>
+</ul>
+<h1 id="使用Hexo写博客"><a href="#使用Hexo写博客" class="headerlink" title="使用Hexo写博客"></a>使用Hexo写博客</h1><h2 id="Hexo简介"><a href="#Hexo简介" class="headerlink" title="Hexo简介"></a>Hexo简介</h2><ul>
+<li>Hexo 是一个快速、简洁且高效的博客框架。Hexo 使用 Markdown（或其他渲染引擎）解析文章，在几秒内，即可利用靓丽的主题生成静态网页。</li>
+</ul>
+<h2 id="Hexo原理"><a href="#Hexo原理" class="headerlink" title="Hexo原理"></a>Hexo原理</h2><ul>
+<li>由于github pages存放的都是静态文件，博客存放的不只是文章内容，还有文章列表、分类、标签、翻页等动态内容，假如每次写完一篇文章都要手动更新博文目录和相关链接信息，相信谁都会疯掉，所以hexo所做的就是将这些md文件都放在本地，每次写完文章后调用写好的命令来批量完成相关页面的生成，然后再将有改动的页面提交到github。</li>
+</ul>
+<h2 id="Hexo初始化"><a href="#Hexo初始化" class="headerlink" title="Hexo初始化"></a>Hexo初始化</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ hexo g //生成静态文件</span><br><span class="line">$ hexo s //启动本地服务</span><br></pre></td></tr></table></figure>
+<h2 id="站点-config-yml配置"><a href="#站点-config-yml配置" class="headerlink" title="站点_config.yml配置"></a>站点_config.yml配置</h2><p><strong>特别注意 _config.yml文件中冒号后均有一个空格</strong></p>
+<h3 id="基本描述"><a href="#基本描述" class="headerlink" title="基本描述"></a>基本描述</h3><p><img src="/2019/05/11/hexo-github-build-blog/configSite.jpg" alt="Site"></p>
+<ul>
+<li>title 中填写博客名称</li>
+<li>description 中填写博客描述</li>
+<li>author 中填写作者</li>
+<li>lauguage 中填写zh-CH（简体中文）</li>
+<li>timezone 中填写时区 Asia/Shanghai（亚洲上海）</li>
+</ul>
+<h3 id="生成路径"><a href="#生成路径" class="headerlink" title="生成路径"></a>生成路径</h3><p><img src="/2019/05/11/hexo-github-build-blog/configURL1.jpg" alt="postURL"></p>
+<ul>
+<li>url 中填写github page地址</li>
+<li>root 中填写网站根目录（即为/）</li>
+<li><p>permalink 中填写生成网站文件目录 修改为</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">:title/</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>permalink_defaults 保持默认</p>
+</li>
+<li>文章的source路径手动创建年/月/日文件夹</li>
+</ul>
+<p><img src="/2019/05/11/hexo-github-build-blog/configURL2.jpg" alt="floderName"></p>
+<p><strong>注意 MarkDown中引用外部图片无法显示请开启此项</strong></p>
+<p><strong>修改post_asset_folder为true</strong></p>
+<p><img src="/2019/05/11/hexo-github-build-blog/postfolder.jpg" alt="post_asset_folder true"></p>
+<h3 id="提交到GitHub"><a href="#提交到GitHub" class="headerlink" title="提交到GitHub"></a>提交到GitHub</h3><p><img src="/2019/05/11/hexo-github-build-blog/deploy.jpg" alt="post_asset_folder true"></p>
+<ul>
+<li>deploy中<ul>
+<li>type 中填写git</li>
+<li>repository 填写github仓库地址</li>
+<li>branch 填写提交分支 一般而言是master</li>
+</ul>
+</li>
+<li><p>执行命令后 即可自动生成静态文件并提交到github仓库</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo d -g</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>若报错 尝试运行后再尝试</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm install hexo-deployer-git --save</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p><strong>至此  等待10-30分钟  就可以访问  username.github.io 访问自己的博客了  若想美化自己的博客可以继续往下看  否则直接跳转到<a href="#用MarkDown语法写博客">2.8</a></strong></p>
+<h3 id="Hexo修改主题"><a href="#Hexo修改主题" class="headerlink" title="Hexo修改主题"></a>Hexo修改主题</h3><ul>
+<li>默认主题很丑，那我们就来<a href="https://hexo.io/themes/" target="_blank" rel="noopener">换一个主题</a>吧</li>
+<li>我使用的主题是<a href="https://github.com/theme-next/hexo-theme-next" target="_blank" rel="noopener">NexT</a></li>
+<li><p>安装方法</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ cd /你的Hexo文件夹路径/hexo/</span><br><span class="line">$ git clone https://github.com/iissnan/hexo-theme-next themes/next</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>打开 站点配置文件， 找到 theme 字段，并将其值更改为 next。<br><img src="/2019/05/11/hexo-github-build-blog/theme.jpg" alt="theme-next"></p>
+</li>
+</ul>
+<h2 id="主题-config-yml配置"><a href="#主题-config-yml配置" class="headerlink" title="主题_config.yml配置"></a>主题_config.yml配置</h2><p><img src="/2019/05/11/hexo-github-build-blog/themeconfig.jpg" alt="themeConfig"></p>
+<ul>
+<li>我开启的只有主页（Home）、归档（Archives）、关于我（About）三个页面 并开启图片（icons: true）</li>
+</ul>
+<h2 id="自定义背景"><a href="#自定义背景" class="headerlink" title="自定义背景"></a>自定义背景</h2><h3 id="静态图片背景"><a href="#静态图片背景" class="headerlink" title="静态图片背景"></a>静态图片背景</h3><ul>
+<li><p>themes/next/source/css/_coutom/costom.styl 文件中添加</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">//背景</span><br><span class="line">body&#123;</span><br><span class="line">  background-image:url(/images/backGround.jpg);</span><br><span class="line">  background-repeat: no-repeat;</span><br><span class="line">  background-attachment:fixed;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>其中backGround.jpg存放在theme/next/source/images/文件夹中</p>
+</li>
+</ul>
+<h3 id="动态图片背景"><a href="#动态图片背景" class="headerlink" title="动态图片背景"></a>动态图片背景</h3><ul>
+<li><p>同理 在任意一个js文件中添加</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&lt;!-- 动态背景 --&gt;</span><br><span class="line">&lt;script type=&quot;text/javascript&quot; color=&quot;0,0,0&quot; opacity=&apos;0.5&apos; zIndex=&quot;-2&quot; count=&quot;70&quot; src=&quot;//cdn.bootcss.com/canvas-nest.js/1.0.1/canvas-nest.min.js&quot;&gt;&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>其中 颜色我使用的是黑色（0，0，0），透明度：0.5；线段的数量是70；层数设定为-2。</p>
+</li>
+</ul>
+<h2 id="第三方拓展"><a href="#第三方拓展" class="headerlink" title="第三方拓展"></a>第三方拓展</h2><h3 id="站内搜索"><a href="#站内搜索" class="headerlink" title="站内搜索"></a>站内搜索</h3><ul>
+<li><p>安装hexo-generator-search</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm install hexo-generator-search --save</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>打开站点配置文件_config.yml 添加</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">search:</span><br><span class="line">  path: search.xml</span><br><span class="line">  field: post</span><br><span class="line">  format: html</span><br><span class="line">  limit: 10000</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>我博客还没有太多文章就没有加搜索功能添加到首页上 如果需要  搜索结果保存在首页/search.xml文件中  </p>
+</li>
+<li><a href="https://blog.fundebug.com" target="_blank" rel="noopener">搜索功能效果参考</a></li>
+</ul>
+<h3 id="留言板"><a href="#留言板" class="headerlink" title="留言板"></a>留言板</h3><ul>
+<li>一般采用第三方服务 有兴趣的可以自己搜索来使用</li>
+</ul>
+<h3 id="字数统计"><a href="#字数统计" class="headerlink" title="字数统计"></a>字数统计</h3><ul>
+<li>参考<a href="https://blog.csdn.net/wangxw725/article/details/71602256" target="_blank" rel="noopener">hexo字数统计 阅读时间</a></li>
+</ul>
+<h3 id="浏览量统计"><a href="#浏览量统计" class="headerlink" title="浏览量统计"></a>浏览量统计</h3><ul>
+<li>参考<a href="http://ibruce.info/2015/04/04/busuanzi/" target="_blank" rel="noopener">hexo访客统计</a></li>
+</ul>
+<h2 id="用MarkDown语法写博客"><a href="#用MarkDown语法写博客" class="headerlink" title="用MarkDown语法写博客"></a>用MarkDown语法写博客</h2><h3 id="编辑器"><a href="#编辑器" class="headerlink" title="编辑器"></a>编辑器</h3><ul>
+<li>我是用的是Atom编辑器 普通的文本编辑器都可以胜任Hexo的编辑</li>
+</ul>
+<h3 id="MarkDown语法简介"><a href="#MarkDown语法简介" class="headerlink" title="MarkDown语法简介"></a>MarkDown语法简介</h3><ul>
+<li>参考<a href="/../2019/05/10/markdown-syntax">MarkDown中文文档</a></li>
+</ul>
+<h3 id="首页不显示博文所有内容"><a href="#首页不显示博文所有内容" class="headerlink" title="首页不显示博文所有内容"></a>首页不显示博文所有内容</h3><ul>
+<li>MarkDown文件中添加一行<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;!--more--&gt;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h1 id="最终效果"><a href="#最终效果" class="headerlink" title="最终效果"></a>最终效果</h1><ul>
+<li><a href="https://monsterstars.github.io">Monster的个人博客</a></li>
+</ul>
+<h1 id="更多Hexo博客"><a href="#更多Hexo博客" class="headerlink" title="更多Hexo博客"></a>更多Hexo博客</h1><ul>
+<li><a href="https://leaferx.online/" target="_blank" rel="noopener">LEAFERx</a></li>
+<li><a href="https://notes.doublemine.me/" target="_blank" rel="noopener">DOUBLEMINE</a></li>
+<li><a href="https://uchuhimo.me/" target="_blank" rel="noopener">uchuhimo</a></li>
+<li><a href="https://oawan.me/" target="_blank" rel="noopener">新樂街口的三角窗</a></li>
+</ul>
+<h1 id="关于我"><a href="#关于我" class="headerlink" title="关于我"></a>关于我</h1><ul>
+<li>国立华侨大学</li>
+<li>软件工程大二在读</li>
+<li><a href="https://space.bilibili.com/26120782/" target="_blank" rel="noopener">独立视频制作者</a></li>
+<li>啥都感兴趣</li>
+<li>联系方式：<ul>
+<li>qq: 1093846898</li>
+<li>wechat: czh-0526</li>
+<li>e-mail: <a href="mailto:1093846898@qq.com" target="_blank" rel="noopener">1093846898@qq.com</a></li>
+</ul>
+</li>
+</ul>
+<h1 id="觉得本文不错？请支持我"><a href="#觉得本文不错？请支持我" class="headerlink" title="觉得本文不错？请支持我"></a><a href="../../../../about/#您可以通过以下方式支持Monster">觉得本文不错？请支持我</a></h1>
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/05/10/markdown-syntax/" rel="next" title="Markdown 语法说明 (简体中文版)">
+                <i class="fa fa-chevron-left"></i> Markdown 语法说明 (简体中文版)
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/05/12/hqu-wifi/" rel="prev" title="华侨大学宿舍区使用路由器完美教程">
+                华侨大学宿舍区使用路由器完美教程 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+  </div>
+
+
+          </div>
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">Monster</p>
+              <p class="site-description motion-element" itemprop="description">Monster个人博客，学习ing...</p>
+          </div>
+
+          
+            <nav class="site-state motion-element">
+              
+                <div class="site-state-item site-state-posts">
+                
+                  <a href="/archives/">
+                
+                    <span class="site-state-item-count">17</span>
+                    <span class="site-state-item-name">日志</span>
+                  </a>
+                </div>
+              
+
+              
+
+              
+            </nav>
+          
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+            
+          
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#准备工作"><span class="nav-number">1.</span> <span class="nav-text">准备工作</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#GitHub新建仓库"><span class="nav-number">1.1.</span> <span class="nav-text">GitHub新建仓库</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#windows10下Node-js安装"><span class="nav-number">1.2.</span> <span class="nav-text">windows10下Node.js安装</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#windows10下Git-Bash安装及SSH-Key配置"><span class="nav-number">1.3.</span> <span class="nav-text">windows10下Git-Bash安装及SSH Key配置</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Hexo克隆到本地并安装"><span class="nav-number">1.4.</span> <span class="nav-text">Hexo克隆到本地并安装</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#使用Hexo写博客"><span class="nav-number">2.</span> <span class="nav-text">使用Hexo写博客</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Hexo简介"><span class="nav-number">2.1.</span> <span class="nav-text">Hexo简介</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Hexo原理"><span class="nav-number">2.2.</span> <span class="nav-text">Hexo原理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Hexo初始化"><span class="nav-number">2.3.</span> <span class="nav-text">Hexo初始化</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#站点-config-yml配置"><span class="nav-number">2.4.</span> <span class="nav-text">站点_config.yml配置</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#基本描述"><span class="nav-number">2.4.1.</span> <span class="nav-text">基本描述</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#生成路径"><span class="nav-number">2.4.2.</span> <span class="nav-text">生成路径</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#提交到GitHub"><span class="nav-number">2.4.3.</span> <span class="nav-text">提交到GitHub</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Hexo修改主题"><span class="nav-number">2.4.4.</span> <span class="nav-text">Hexo修改主题</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#主题-config-yml配置"><span class="nav-number">2.5.</span> <span class="nav-text">主题_config.yml配置</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#自定义背景"><span class="nav-number">2.6.</span> <span class="nav-text">自定义背景</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#静态图片背景"><span class="nav-number">2.6.1.</span> <span class="nav-text">静态图片背景</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#动态图片背景"><span class="nav-number">2.6.2.</span> <span class="nav-text">动态图片背景</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第三方拓展"><span class="nav-number">2.7.</span> <span class="nav-text">第三方拓展</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#站内搜索"><span class="nav-number">2.7.1.</span> <span class="nav-text">站内搜索</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#留言板"><span class="nav-number">2.7.2.</span> <span class="nav-text">留言板</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#字数统计"><span class="nav-number">2.7.3.</span> <span class="nav-text">字数统计</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#浏览量统计"><span class="nav-number">2.7.4.</span> <span class="nav-text">浏览量统计</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#用MarkDown语法写博客"><span class="nav-number">2.8.</span> <span class="nav-text">用MarkDown语法写博客</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#编辑器"><span class="nav-number">2.8.1.</span> <span class="nav-text">编辑器</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#MarkDown语法简介"><span class="nav-number">2.8.2.</span> <span class="nav-text">MarkDown语法简介</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#首页不显示博文所有内容"><span class="nav-number">2.8.3.</span> <span class="nav-text">首页不显示博文所有内容</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#最终效果"><span class="nav-number">3.</span> <span class="nav-text">最终效果</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#更多Hexo博客"><span class="nav-number">4.</span> <span class="nav-text">更多Hexo博客</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#关于我"><span class="nav-number">5.</span> <span class="nav-text">关于我</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#觉得本文不错？请支持我"><span class="nav-number">6.</span> <span class="nav-text">觉得本文不错？请支持我</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <script src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js">
+<!-- 动态背景 -->
+<script type="text/javascript" color="0,0,0" opacity='0.5' zIndex="-2" count="70" src="//cdn.bootcss.com/canvas-nest.js/1.0.1/canvas-nest.min.js"></script>
+<!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<!--百度自动推送 -->
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+<div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Monster</span>
+
+  
+
+  
+</div>
+
+
+
+
+
+
+
+
+<script src="https://s19.cnzz.com/z_stat.php?id=1274781330&web_id=1274781330" language="JavaScript"></script>
+
+        
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+    
+
+    
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=6.4.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=6.4.1"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=6.4.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=6.4.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=6.4.1"></script>
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

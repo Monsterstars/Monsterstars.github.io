@@ -1,0 +1,842 @@
+<!DOCTYPE html>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="zh-CN">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2"/>
+<meta name="theme-color" content="#222">
+<meta name="baidu-site-verification" content="udk71Uwu04" />
+
+
+
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=6.4.1" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=6.4.1">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=6.4.1">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=6.4.1">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=6.4.1" color="#222">
+
+
+
+
+
+
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    version: '6.4.1',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: false,
+    fastclick: false,
+    lazyload: false,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+  
+
+
+
+
+  <meta name="description" content="参与后端构建">
+<meta name="keywords" content="为邻——基于GNSS定位技术的Android移动App">
+<meta property="og:type" content="article">
+<meta property="og:title" content="为邻——基于GNSS定位技术的Android移动App">
+<meta property="og:url" content="https://monsterstars.github.io/2019/06/08/wei-lin/index.html">
+<meta property="og:site_name" content="Monster博客">
+<meta property="og:description" content="参与后端构建">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="https://monsterstars.github.io/2019/06/08/wei-lin/1.png">
+<meta property="og:image" content="https://monsterstars.github.io/2019/06/08/wei-lin/2.jpg">
+<meta property="og:image" content="https://monsterstars.github.io/2019/06/08/wei-lin/3.png">
+<meta property="og:image" content="https://monsterstars.github.io/2019/06/08/wei-lin/4.png">
+<meta property="og:image" content="https://monsterstars.github.io/2019/06/08/wei-lin/5.png">
+<meta property="og:image" content="https://monsterstars.github.io/2019/06/08/wei-lin/6.png">
+<meta property="og:image" content="https://monsterstars.github.io/2019/06/08/wei-lin/7.png">
+<meta property="og:updated_time" content="2019-06-13T19:10:26.197Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="为邻——基于GNSS定位技术的Android移动App">
+<meta name="twitter:description" content="参与后端构建">
+<meta name="twitter:image" content="https://monsterstars.github.io/2019/06/08/wei-lin/1.png">
+
+
+
+
+
+
+  <link rel="canonical" href="https://monsterstars.github.io/2019/06/08/wei-lin/"/>
+
+
+
+<script type="text/javascript" id="page.configurations">
+  CONFIG.page = {
+    sidebar: "",
+  };
+</script>
+
+  <title>为邻——基于GNSS定位技术的Android移动App | Monster博客</title>
+  
+
+
+
+
+
+
+
+
+
+  <noscript>
+  <style type="text/css">
+    .use-motion .motion-element,
+    .use-motion .brand,
+    .use-motion .menu-item,
+    .sidebar-inner,
+    .use-motion .post-block,
+    .use-motion .pagination,
+    .use-motion .comments,
+    .use-motion .post-header,
+    .use-motion .post-body,
+    .use-motion .collection-title { opacity: initial; }
+
+    .use-motion .logo,
+    .use-motion .site-title,
+    .use-motion .site-subtitle {
+      opacity: initial;
+      top: initial;
+    }
+
+    .use-motion {
+      .logo-line-before i { left: initial; }
+      .logo-line-after i { right: initial; }
+    }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Monster博客</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+    
+  </div>
+
+  <div class="site-nav-toggle">
+    <button aria-label="切换导航栏">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  
+    <ul id="menu" class="menu">
+      
+        
+        
+        
+          
+          <li class="menu-item menu-item-home">
+    <a href="/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-home"></i> <br />首页</a>
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-about">
+    <a href="/about/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-user"></i> <br />关于</a>
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-archives">
+    <a href="/archives/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />归档</a>
+  </li>
+
+      
+      
+    </ul>
+  
+
+  
+    
+
+  
+
+  
+</nav>
+
+
+
+  
+
+
+
+</div>
+    </header>
+
+    
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://monsterstars.github.io/2019/06/08/wei-lin/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Monster">
+      <meta itemprop="description" content="Monster个人博客，学习ing...">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Monster博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">为邻——基于GNSS定位技术的Android移动App
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2019-06-08 00:00:00" itemprop="dateCreated datePublished" datetime="2019-06-08T00:00:00+08:00">2019-06-08</time>
+            
+
+            
+              
+
+              
+                
+                <!-- <span class="post-meta-divider">|</span> -->
+                
+
+                <!-- <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span> -->
+                
+                  <!-- <span class="post-meta-item-text">更新于</span> -->
+                
+                <!-- <time title="修改时间：2019-06-14 03:10:26" itemprop="dateModified" datetime="2019-06-14T03:10:26+08:00"> -->
+                  
+                <!-- </time> -->
+              
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+              <div class="post-description">参与后端构建</div>
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>宣传视频：</p>
+<video id="video" width="640" height="480" controls="controls"><br><source id="mp4" src="wei-lin-video.mp4" type="video/mp4"><br></video>
+
+
+<h2 id="作品安装说明"><a href="#作品安装说明" class="headerlink" title="作品安装说明"></a>作品安装说明</h2><ol>
+<li>手机浏览器访问我们的个人网站“ <a href="https://monsterstars.github.io/static/zhsq.apk”">https://monsterstars.github.io/static/zhsq.apk”</a></li>
+<li>点击“下载客户端”按钮弹出下载链接</li>
+<li>使用下载的apk包并进行安装与权限赋予</li>
+<li>打开安装完毕app进行根据页面提示进行登录注册</li>
+</ol>
+<h2 id="作品效果图"><a href="#作品效果图" class="headerlink" title="作品效果图"></a>作品效果图</h2><p>Android前端地图API接口部分代码<br><img src="/2019/06/08/wei-lin/1.png" alt="message"><br>Android前端Adapter部分代码<br><img src="/2019/06/08/wei-lin/2.jpg" alt="message"><br>后端数据库接口部分代码<br><img src="/2019/06/08/wei-lin/3.png" alt="message"><br>后端数据库表<br><img src="/2019/06/08/wei-lin/4.png" alt="message"><br>Android界面主页界面设计<br><img src="/2019/06/08/wei-lin/5.png" alt="message"><br>Android界面任务界面设计<br><img src="/2019/06/08/wei-lin/6.png" alt="message"><br>Android界面个人中心界面设计<br><img src="/2019/06/08/wei-lin/7.png" alt="message"></p>
+<h2 id="作品思路"><a href="#作品思路" class="headerlink" title="作品思路"></a>作品思路</h2><h3 id="创意："><a href="#创意：" class="headerlink" title="创意："></a>创意：</h3><p>项目的创意起源于我们生活中一个很微小的细节，因大学校园区域较大，同学们往来菜鸟驿站拿取快递较为不便，出现了互助“雏形”，即部分同学在拿取自己快递的同时在群聊中提出可顺手帮取的信息，有此需求的其他同学支付一定的金额换取方便。也因此基本需求衍生出了不少其余业务，如搬置物品、代买零食、代购日用品等小需求。在各种需求而产生的各类互助群聊中来去穿梭而感到麻烦不已的三个人一拍即合，决定做一款能够方便发布接取互助任务的手机App来方便大家。在与指导老师联系并调研讨论后，我们寻找到了问题的根源，即当代人与同一社群成员交流度急剧下降，而导致的互助困难问题。在这种情况下许多人选择通过微信、QQ互助群，这样不仅交流十分困难，效率也十分低下。在准备将其作为一款定位为“社群互助”的App的同时，我们也同时结合社会上的动态，决定加入呼救功能以在互助之余提供一个给予老人、小孩、女性等弱势人群的呼救功能，充分加强社群互助与用户使用度。</p>
+<h3 id="策划："><a href="#策划：" class="headerlink" title="策划："></a>策划：</h3><p>开发开始前，我们将 App 开发分为4个板块，产品功能探讨及流程设计；产品 UI 界面设计及编码；数据库设计及编码；前后端数据交互。并进行了前后端的分工和框架的选择。</p>
+<p>在开发开始后，我们计划在每周末开会讨论各分块所遇困难及收获技巧。各个模块的负责人会汇报本周内进展，使各模块成员可互相掌握他人进度，有利于后期各个模块间的沟通交流，分工整合。</p>
+<p>根据项目实际，灵活调整计划表。项目推进的过程中会遇到很多我们事先无法预料的困难，如果某个模块因为未知的困难而导致进度延误，可能会影响到其他模块，得益于每周的例会制度，我们可以灵活的调整进度表，安排下一步的工作。</p>
+<h3 id="制作"><a href="#制作" class="headerlink" title="制作:"></a>制作:</h3><p>前端开发：主要使用 JAVA 与 xml 语言编写页面逻辑与页面布局，使用 Fragment 呈现 UI 视图，使用 Activity 管理 Fragment。使用 OkHttp 和 Gson 库进行 http 链接与解析 Json 数据。使用 Google 推荐的 Material Design 设计制作页面。</p>
+<p>后端开发：在阿里云上部署，使用 java 语言开发和 mysql 数据库，通过 PHPmyadmin 实现在线数据库管理，后台搭建使用 spring，springmvc，mybatis 框架作为底层架构实现数据库连接，前后端请求的数据交换格式，使用统一的标准 json 格式。</p>
+<h3 id="合成"><a href="#合成" class="headerlink" title="合成:"></a>合成:</h3><p>依照前期使用Axure设计的原型进行编码。我们采用了Git开源式版本管理系统进行前端项目整合。因为Git中有各种繁杂的指令需要我们花很长时间去理解尤其是分支的概念，在大量的网上阅读文档和练习后终于上手Git。后期使用OkHttp库与部署在购置的云服务器上的数据库进行对接。</p>
+<h3 id="优化"><a href="#优化" class="headerlink" title="优化:"></a>优化:</h3><p>经过数个月的学习，开发，我们推出了第一个版本，该版本已经初步实现了我们预期设计是功能，但是还存在以下几个方面需要完善和改进：</p>
+<ol>
+<li><p>电信物联网与我们自己的后台服务器之间使用的是 http 协议，存在一定的安全隐患。 且与Android高版本不兼容。正在进行https认证申请。</p>
+</li>
+<li><p>物联网的终端产品需要进行缩小，并且对外观进行美化。已出具设计初稿</p>
+</li>
+<li><p>初步开发时仅以可用性为目标，导致界面能够使用但不够美观，我们已邀请数字媒体技术专业同学帮助对APP的UI进行优化。</p>
+</li>
+</ol>
+<h3 id="在进行优化的同时，我们以人员推销和广告策略对APP进行了商业推广，细节如下："><a href="#在进行优化的同时，我们以人员推销和广告策略对APP进行了商业推广，细节如下：" class="headerlink" title="在进行优化的同时，我们以人员推销和广告策略对APP进行了商业推广，细节如下："></a>在进行优化的同时，我们以人员推销和广告策略对APP进行了商业推广，细节如下：</h3><p>人员推销：由开发团队内部的市场推广负责人员，前往各高校、社区进行游说推广，开展宣讲会等社区活动，同时提高 APP 知名度。</p>
+<p>广告策略：应以网络推广为主，辅以其他形式的广告推广，增强针对主要客户群体的曝光度。</p>
+<h3 id="设计重点难点"><a href="#设计重点难点" class="headerlink" title="设计重点难点"></a>设计重点难点</h3><p>重点：</p>
+<ol>
+<li><p>原型设计部分：App主色确定为绿色。主题色选用绿色（#61A584），橙色（#F59A23）为部分点缀。由于App主要特色为“求助求救”功能，而绿色象征安全、希望与和平，与App的功能相辅相成。</p>
+</li>
+<li><p>前端部分：统一使用最新Android版本即API28；调用百度地图API；使用OkHttp框架进行前后端交接；</p>
+</li>
+<li><p>后端部分：使用spring，springmvc，mybatis 框架作为底层架构；接口和实现类分为bean ,dao ,service ,controller；使用springmvc扫描controller，spring扫描其他组件；@Autowired 注释，对类成员变量、方法及构造函数进行标注，完成自动装配的工作；配置扫描器，将MyBatis接口的实现加入到ioc容器中；利用mybatis-generator在bean和dao层自动生成代码，大大减轻了代码书写的工作量；前后端请求的数据交换格式，使用统一的标准 json 格式。</p>
+</li>
+<li><p>服务器配置部分：后台服务器我们选择使用阿里云的服务器，使用Linux操作系统</p>
+</li>
+</ol>
+<p>难点：</p>
+<ol>
+<li><p>原型设计部分：</p>
+<p>App主色难以确定，颜色有千种万种，主色的确定需要万里挑一。每个App都有自己的主色，主色的选择与该App的需求与功能应用有一定的联系。解决：参考大量不同功能App的界面，观察主色与应用的联系，阅读相关书籍及网络资料，学习最佳配色方案。</p>
+<p>App的图标设计，对图标的设计没有经验，也没有想法，无从下手。解决：参考大量的App的图标设计，观察到总共分为三类：</p>
+<p>纯文字类,字体需要设计/创新 (例如：淘宝，支付宝)</p>
+<p>纯图片类（例如：QQ，淘票票，优酷，微博，飞猪）</p>
+<p>图片+文字类（例如：京东）</p>
+<p>最后选用了第三类，图片+文字类，文字加以一定的设计，配上与APP功能相关的标志。</p>
+</li>
+<li><p>前端部分：</p>
+<p>遇到最多的是版本问题，由于我们三个开发者在写UI前端界面的时候用的虚拟机版本不同导致我们的UI界面始终不能统一, 且分别绘制了不同的自定义控件所以三个人呈现出来了三个不同风格的作品，皆与原型有所偏移。解决：及时发现了问题并统一了我们的UI</p>
+<p>采用了Git开源式版本管理系统，而我们之前只对SVN有所了解，学习难度大，学习成本较高。解决：通过大量的网上阅读文档和练习成功上手Git</p>
+<p>调用百度地图的API：上手后才知道百度地图其实有许多的坑，申请百度地图平台时SHA1码一定要正确，导入LBS包后要加入library中，AndroidManifest中除了加入权限还要加入标签等等问题，这些细节稍不注意就会使地图初始化不能定位，我们当时也困扰代码编译时没有报错，但地图一直无法定位，最后发现是没有加入so文件导入。解决：细致检查代码和参阅对比多个blog</p>
+<p>前后端交互：采用了OkHttp框架，但我们在实际运用中发现引用的框架已经停止维护许久。无法实现与后端交互数据的功能。解决：框架基础上重新封装了一个类，成功的与后端进行了数据交互。</p>
+</li>
+<li><p>后端部分：</p>
+<p>修改数据库：在开发过程中，遇到了必须要修改数据库的情况，这就必须要重写后端的逻辑控制代码，重新使用mybatis-generator生成代码，出现了修改架构而出现报错现象。解决：在经历数个小时的debug之后，发现再重新使用mybatis-generator生成代码时，会在原来的文件下继续生成代码，而不是覆盖该文件的代码。发现问题之后，将原文件删除，重新使用mybatis-generator生成代码，再进行修改。</p>
+</li>
+<li><p>服务器部分：</p>
+<p>Linux系统学习与操作：Linux操作系统与Windows相比有更高的安全性，但是随之而来的是操作的复杂性。Linux的操作是使用命令行控制，没有像Windows那样的界窗系统。解决：查阅相关资料后，决定在服务器上部署宝塔Linux应用，宝塔Linux给我们提供了像Windows那样的窗口操作界面，通过它，我们可以仅仅通过单击鼠标就可以完成mysql，tomcat，php，PHPmyadmin等常用软件的安装和管理。</p>
+<p>命名规则区别：由于服务器与本地的数据库使用不同的版本，导致两边的服务器命名规则不一样。服务器上的数据库不允许数据库名中带“.”号。在部署期间，由于服务器搭建与代码编写人员间的沟通不及时，导致这个问题被隐藏了下来。解决：通过查看日志等多方手段排查才发现并解决了这个问题。</p>
+</li>
+</ol>
+<h1 id="关于我"><a href="#关于我" class="headerlink" title="关于我"></a>关于我</h1><ul>
+<li>国立华侨大学</li>
+<li>软件工程大二在读</li>
+<li><a href="https://space.bilibili.com/26120782/" target="_blank" rel="noopener">独立视频制作者</a></li>
+<li>啥都感兴趣</li>
+<li>联系方式：<ul>
+<li>qq: 1093846898</li>
+<li>wechat: czh-0526</li>
+<li>e-mail: <a href="mailto:1093846898@qq.com" target="_blank" rel="noopener">1093846898@qq.com</a></li>
+</ul>
+</li>
+</ul>
+<h1 id="觉得本文不错？请支持我"><a href="#觉得本文不错？请支持我" class="headerlink" title="觉得本文不错？请支持我"></a><a href="../../../../about/#您可以通过以下方式支持Monster">觉得本文不错？请支持我</a></h1>
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/06/06/shadowsocks-build/" rel="next" title="利用国外vps主机搭建Shadowsocks实现科学上网">
+                <i class="fa fa-chevron-left"></i> 利用国外vps主机搭建Shadowsocks实现科学上网
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/06/10/jsjds/" rel="prev" title="IdeaNest 创意社区">
+                IdeaNest 创意社区 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+  </div>
+
+
+          </div>
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">Monster</p>
+              <p class="site-description motion-element" itemprop="description">Monster个人博客，学习ing...</p>
+          </div>
+
+          
+            <nav class="site-state motion-element">
+              
+                <div class="site-state-item site-state-posts">
+                
+                  <a href="/archives/">
+                
+                    <span class="site-state-item-count">17</span>
+                    <span class="site-state-item-name">日志</span>
+                  </a>
+                </div>
+              
+
+              
+
+              
+            </nav>
+          
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+            
+          
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#作品安装说明"><span class="nav-number">1.</span> <span class="nav-text">作品安装说明</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#作品效果图"><span class="nav-number">2.</span> <span class="nav-text">作品效果图</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#作品思路"><span class="nav-number">3.</span> <span class="nav-text">作品思路</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#创意："><span class="nav-number">3.1.</span> <span class="nav-text">创意：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#策划："><span class="nav-number">3.2.</span> <span class="nav-text">策划：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#制作"><span class="nav-number">3.3.</span> <span class="nav-text">制作:</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#合成"><span class="nav-number">3.4.</span> <span class="nav-text">合成:</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#优化"><span class="nav-number">3.5.</span> <span class="nav-text">优化:</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#在进行优化的同时，我们以人员推销和广告策略对APP进行了商业推广，细节如下："><span class="nav-number">3.6.</span> <span class="nav-text">在进行优化的同时，我们以人员推销和广告策略对APP进行了商业推广，细节如下：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#设计重点难点"><span class="nav-number">3.7.</span> <span class="nav-text">设计重点难点</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#关于我"><span class="nav-number"></span> <span class="nav-text">关于我</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#觉得本文不错？请支持我"><span class="nav-number"></span> <span class="nav-text">觉得本文不错？请支持我</span></a></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <script src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js">
+<!-- 动态背景 -->
+<script type="text/javascript" color="0,0,0" opacity='0.5' zIndex="-2" count="70" src="//cdn.bootcss.com/canvas-nest.js/1.0.1/canvas-nest.min.js"></script>
+<!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<!--百度自动推送 -->
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+<div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Monster</span>
+
+  
+
+  
+</div>
+
+
+
+
+
+
+
+
+<script src="https://s19.cnzz.com/z_stat.php?id=1274781330&web_id=1274781330" language="JavaScript"></script>
+
+        
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+    
+
+    
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=6.4.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=6.4.1"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=6.4.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=6.4.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=6.4.1"></script>
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
